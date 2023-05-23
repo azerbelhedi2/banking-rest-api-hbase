@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
+<configuration>
+	<!-- Pseudo-Distributed Mode. -->
+	<property>
+		<name>hbase.rootdir</name>
+		<value>hdfs://hadoop-master:9000/hbase</value>
+	</property>
+
+	<property>
+		<name>hbase.cluster.distributed</name>
+		<value>true</value>
+	</property>
+
+	<property>
+		<name>hbase.master.hostname</name>
+		<value>hadoop-master</value>
+	</property>
+
+	<!-- Zookeeper Settings -->
+	<property>
+		<name>hbase.zookeeper.property.clientPort</name>
+		<value>2181</value>
+	</property>
+	<property>
+		<name>hbase.zookeeper.quorum</name>
+		<value>hadoop-slave-1:2181</value>
+	</property>
+	<property>
+		<name>hbase.zookeeper.property.dataDir</name>
+		<value>hdfs://hadoop-master:9000/zookeeper</value>
+	</property>
+
+	<property>
+		<name>hbase.defaults.for.version.skip</name>
+		<value>true</value>
+	</property>
+	<property>
+		<name>hbase.regionserver.wal.codec</name>
+		<value>org.apache.hadoop.hbase.regionserver.wal.IndexedWALEditCodec
+		</value>
+	</property>
+
+	<property>
+		<name>hbase.rpc.controllerfactory.class</name>
+		<value>org.apache.hadoop.hbase.ipc.controller.ServerRpcControllerFactory
+		</value>
+	</property>
+
+<property>
+  <name>hbase.rpc.controllerfactory.class</name>
+  <value>org.apache.hadoop.hbase.ipc.controller.ServerRpcControllerFactory</value>
+</property>
+
+
+</configuration>
+
